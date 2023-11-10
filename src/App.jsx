@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import GeneralPage from './component/GeneralPage'
 
 function App() {
 
   return (
     <>
-     <p>Quoting page</p>
+    <GeneralPage />
     </>
   )
 }
