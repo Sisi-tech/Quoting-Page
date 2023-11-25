@@ -23,83 +23,83 @@ const GeneralPage = () => {
     const [phoneNum, setPhoneNum] = useState('');
     const [email, setEmail] = useState('');
     return (
-        <div className='w-full h-screen pt-[100px] gap-4'
+        <div className='w-full h-screen flex flex-col items-center justify-center pt-[100px] gap-4'
             style={{ backgroundImage: `url(${HouseBackgroundImg})`, backgroundSize: '100% 100%'}}>
-            <div className='flex flex-col items-center py-6'
-                style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)'}}>
+            <div className='flex flex-col items-center py-6'>
                 <h1 className='text-5xl py-1'>Homeowner Insurance</h1>
                 <p className='text-2xl py-4'>Secure a quote for the place you love</p>
-                <form>
-                    <div className=''>
-                        <label htmlFor='eff-date' className='text-xl block' >
-                            Effective Date:&nbsp;
-                        </label>
-                        <input 
-                            type='date'
-                            id='eff-date'
-                            name='eff-date'
-                            value={selectedDate}
-                            onChange={(e)=> setSelectedDate(e.target.value)}
-                            min={todayString}
-                            max={futureDateString}
-                            placeholder={todayString}
-                            className='text-md my-1 p-2 rounded-sm border border-black hover:bg-blue-50'
+            </div>
+            <form className='p-4' style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)'}}>
+                <div className='flex flex-col w-[130px]'>
+                    <label htmlFor='eff-date' className='text-xl block rounded-sm h-[36px]' >
+                            Effective Date:
+                    </label>
+                    <input 
+                        type='date'
+                        id='eff-date'
+                        name='eff-date'
+                        value={selectedDate}
+                        onChange={(e)=> setSelectedDate(e.target.value)}
+                        min={todayString}
+                        max={futureDateString}
+                        placeholder={todayString}
+                        className='text-md my-1 p-2 rounded-sm border border-black hover:bg-blue-50'
                         />
-                    </div>
+                </div>
                     {/* name row */}
-                    <div className='flex gap-4'>
-                        <div>
-                            <label htmlFor='firstName' className='text-xl block' >First Name:&nbsp; </label>
-                            <input 
-                                type='text'
-                                id='firstName'
-                                name='firstName'
-                                value={firstName}
-                                placeholder='First name'
-                                onChange={(e)=> setFirstName(e.target.value.toUpperCase())}
-                                className='text-md my-1 p-2 border border-black hover:bg-blue-50 rounded-sm w-[300px]'
-                                />
-                        </div>
-                        <div>
-                            <label htmlFor='middleName' className='text-xl block' >Middle Name:&nbsp; </label>
-                            <input 
-                                type='text'
-                                id='middleName'
-                                name='middleName'
-                                value={middleName}
-                                placeholder='Middle name'
-                                onChange={(e)=> setMiddleName(e.target.value.toUpperCase())}
-                                className='text-md my-1 p-2 border border-black hover:bg-blue-50 rounded-sm w-[300px]'
-                                />
-                        </div>
-                        <div>
-                            <label htmlFor='lastName' className='text-xl block' >Last Name:&nbsp; </label>
-                            <input 
-                                type='text'
-                                id='lastName'
-                                name='lastName'
-                                value={lastName}
-                                placeholder='Last name'
-                                onChange={(e)=> setLastName(e.target.value.toUpperCase())}
-                                className='text-md my-1 p-2 border border-black hover:bg-blue-50 rounded-sm w-[300px]'
-                                />
-                        </div>
+                <div className='flex flex-col md:flex-row gap-4'>
+                    <div>
+                        <label htmlFor='firstName' className='text-xl block' >First Name:&nbsp; </label>
+                        <input 
+                            type='text'
+                            id='firstName'
+                            name='firstName'
+                            value={firstName}
+                            placeholder='First name'
+                            onChange={(e)=> setFirstName(e.target.value.toUpperCase())}
+                            className='text-md my-1 p-2 border border-black hover:bg-blue-50 rounded-sm w-[300px]'
+                            />
                     </div>
-                    <div className='flex gap-20'>
+                    <div>
+                        <label htmlFor='middleName' className='text-xl block' >Middle Name:&nbsp; </label>
+                        <input 
+                            type='text'
+                            id='middleName'
+                            name='middleName'
+                            value={middleName}
+                            placeholder='Middle name'
+                            onChange={(e)=> setMiddleName(e.target.value.toUpperCase())}
+                            className='text-md my-1 p-2 border border-black hover:bg-blue-50 rounded-sm w-[300px]'
+                            />
+                    </div>
+                    <div>
+                        <label htmlFor='lastName' className='text-xl block' >Last Name:&nbsp; </label>
+                        <input 
+                            type='text'
+                            id='lastName'
+                            name='lastName'
+                            value={lastName}
+                            placeholder='Last name'
+                            onChange={(e)=> setLastName(e.target.value.toUpperCase())}
+                            className='text-md my-1 p-2 border border-black hover:bg-blue-50 rounded-sm w-[300px]'
+                            />
+                    </div>
+                    </div>
+                    <div className='flex flex-col md:flex-row gap-5 md:gap-20'>
                         <div>
                             <label htmlFor='dateOfBirth' className='text-xl block'>Date of Birth</label>
                             <input id='dateOfBirth' name='dateOfBirth' type='date' className='text-md my-1 p-2 border border-black hover:bg-blue-50 rounded-sm h-[36px]' />
                         </div>
                         <div>
                             <label htmlFor='phoneNum' className='text-xl block'>Phone Number</label>
-                            <input id='phoneNum' name='phoneNum' type='text' 
+                            <input id='phoneNum' name='phoneNum' type='text' value={phoneNum}
                                 placeholder='000-000-0000'
                                 onChange={(e)=>setPhoneNum(e.target.value)}
                                 className='text-md my-1 p-2 border border-black hover:bg-blue-50 rounded-sm h-[36px] w-[200px]'/>
                         </div>
                         <div>
                             <label htmlFor='email' className='text-xl block'>Email</label>
-                            <input id='email' name='email' type='email'
+                            <input id='email' name='email' type='email' value={email}
                                 placeholder='Email'
                                 onChange={(e)=>setEmail(e.target.value)} 
                                 className='text-md my-1 p-2 border border-black hover:bg-blue-50 rounded-sm h-[36px] w-[300px]'/>
@@ -107,7 +107,7 @@ const GeneralPage = () => {
                         </div>
                     <div>
                         <p className='text-xl py-4'>Location address:</p>
-                        <div className='flex gap-26'>
+                        <div className='flex flex-col md:flex-row gap-5 md:gap-16'>
                             <div>
                                 <label htmlFor='street' className='text-xl block'>Street</label>
                                 <input type='text' id='street' name='street' value={street} placeholder='Street address'
@@ -122,7 +122,8 @@ const GeneralPage = () => {
                             </div>
                             <div>
                                 <label htmlFor='county' className='text-xl block'>County</label>
-                                <select id='county' name='county' className='h-[36px] text-md my-1 p-2 border border-black w-[100px]'>
+                                <select id='county' name='county' className='h-[36px] text-md my-1 p-2 border border-black w-[120px]'>
+                                    <option></option>
                                     <option>New York</option>
                                     <option>Kings</option>
                                     <option>Queens</option>
@@ -130,10 +131,10 @@ const GeneralPage = () => {
                                 </select>
                             </div>
                         </div>
-                        <div className='flex gap-60'>
+                        <div className='flex flex-col md:flex-row gap-5 md:gap-60'>
                             <div>
                                 <label htmlFor='state' className='text-xl block'>State</label>
-                                <select id="state" name='state' className='h-[36px] text-md my-1 p-2 border border-black w-[100px]'>
+                                <select id="state" name='state' className='h-[36px] text-md my-1 p-2 border border-black w-[120px]'>
                                     <option>New York</option>
                                 </select>
                             </div>
@@ -153,7 +154,7 @@ const GeneralPage = () => {
                         <div></div>
                     </div>
                 </form>
-            </div>
+            
         </div>
     )
 }
